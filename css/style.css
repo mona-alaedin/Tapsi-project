@@ -1,0 +1,199 @@
+/** Reset , Fonts , variables */
+
+
+@font-face {
+  font-family: "iranyekan";
+  font-weight: 700;
+  font-style: normal;
+  src: url("../assets/fonts/Yekan.woff");
+}
+
+:root {
+  --white: #ffffff;
+  --orange: #FF5722;
+  --blue: #0065dc;
+  --textBlack: #000000;
+  --textGray: #545454;
+  --navbarColor: #f8f8f8;
+  --blogTextColor: #9b9b9b;
+  --servicesTextColor: #333333;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+  list-style: none;
+}
+
+body {
+  background-color: var(--white);
+  font-family: iranyekan;
+  font-size: 1.4rem;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+h1,
+h2,
+h3 {
+  color: var(--textBlack);
+}
+
+h1 {
+  font-size: 2.5rem;
+}
+
+h2 {
+  font-size: 2.2rem;
+}
+
+.btn {
+  border: none;
+  font-family: iranyekan;
+  padding: 7px 40px;
+  border-radius: 8px;
+  color: var(--white);
+  font-size: 15px;
+  line-height: 30px;
+}
+
+.btn--primary {
+  background-color: var(--orange);
+}
+
+
+
+/*? HEADER STYLE */
+
+
+.navbar-container {
+  display: flex;
+}
+
+.navbar {
+  background-color: var(--navbarColor);
+  padding: 0 10%;
+  height: 60px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.navbar--links {
+  flex-direction: column-reverse;
+  gap: 1.5rem;
+  padding: 1.5rem;
+  position: absolute;
+  top: 60px;
+  right: 0;
+  width: 100%;
+  display: none;
+  box-shadow: 0 10px 27px rgba(0, 0, 0, .05);
+}
+
+.navbar--links li a {
+  font-size: 1.6rem;
+  line-height: 30px;
+  color: var(--textGray);
+}
+
+.download-tapsi {
+  display: none;
+
+}
+
+.download-tapsi a {
+  display: block;
+  color: var(--white);
+}
+
+.hamburger {
+  position: relative;
+  height: 24px;
+  width: 24px;
+}
+
+.bar1,
+.bar2,
+.bar3 {
+  display: block;
+  background-color: var(--textBlack);
+  width: 24px;
+  height: 2px;
+}
+
+.bar2 {
+  margin: 6px 0;
+}
+
+
+.hamburger.active .bar2 {
+  margin: 0;
+  display: none;
+}
+
+.hamburger.active .bar1 {
+  position: absolute;
+  top: 12px;
+  transform: rotate(-45deg);
+}
+
+.hamburger.active .bar3 {
+  position: absolute;
+  top: 12px;
+  transform: rotate(45deg);
+}
+
+
+
+
+
+
+.header--section img {
+  width: 100%;
+  background-size: cover;
+}
+
+@media screen and (min-width:768px) {
+  .hamburger {
+    display: none;
+  }
+
+  .navbar--links {
+    display: flex !important;
+    flex-direction: row-reverse;
+    justify-content: space-between;
+    align-items: center;
+    gap: 0;
+    padding: 0;
+    position: relative;
+    top: 0;
+    right: 0;
+    width: auto;
+    background-color: var(--navbarColor);
+    box-shadow: none;
+  }
+
+  .navbar--links>li:not(.navbar--links li:first-child) {
+    margin-left: 30px;
+  }
+
+  .navbar--links li a {
+    font-size: 1.4rem;
+  }
+}
+
+@media screen and (min-width:1024px) {
+  .download-tapsi {
+    display: block;
+    margin-right: 35px;
+  }
+
+  .navbar--links li a {
+    font-size: 1.5rem;
+  }
+}

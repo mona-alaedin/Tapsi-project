@@ -380,10 +380,6 @@ html {
   opacity: 0.5;
 }
 
-.tab.active img {
-  opacity: 1;
-}
-
 .tab p {
   margin-top: 13px;
   font-size: 14px;
@@ -395,7 +391,15 @@ html {
 }
 
 .tab-pane {
+  display: none;
+}
+
+.tab-pane.active {
   display: block;
+}
+
+.nav-tabs .tab.active img {
+  opacity: 1;
 }
 
 .links-wrapper {
@@ -472,7 +476,7 @@ html {
 
   }
 
-  .tab-pane {
+  .tab-pane.active {
     width: 100%;
     display: flex;
     align-items: center;
